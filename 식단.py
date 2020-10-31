@@ -15,11 +15,11 @@ import bs4
 print(현재)
 날 = 현재[0:4] + 현재[5:7] + 현재[8:10]
 # print(날)
-html = requests.get("http://school.cbe.go.kr/ds-e/M01030602/list?ymd="+날)
+html = requests.get("http://school.cbe.go.kr/ds-e/M01030602/list?ymd=20201029")
 # print(html.text)
 
 수프 = bs4.BeautifulSoup(html.text,"html.parser")
-트롤 = 수프.find("a", href="/ds-e/M01030602/list?ymd="+날)
+트롤 = 수프.find("a", href="/ds-e/M01030602/list?ymd=20201029")
 식단리스트 = 트롤.find_all("li")
 
 식단 = ''
