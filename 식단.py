@@ -19,7 +19,7 @@ html = requests.get("http://school.cbe.go.kr/ds-e/M01030602/list?ymd="+날)
 # print(html.text)
 
 수프 = bs4.BeautifulSoup(html.text,"html.parser")
-트롤 = 수프.find("a", href="/ds-e/M01030602/list?ymd=ymd="+날)
+트롤 = 수프.find("a", href="/ds-e/M01030602/list?ymd="+날)
 식단리스트 = 트롤.find_all("li")
 
 식단 = ''
